@@ -7,10 +7,10 @@ const CompanyCard = ({ company }) => {
         <img
           src={company.logo}
           alt={`${company.name} logo`}
-          className="h-12 mx-auto object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+          className="h-12 mx-auto object-contain transition-all duration-300"
         />
       </div>
-      <h3 className="font-semibold text-foreground mb-2">{company.name}</h3>
+      <h3 className="font-semibold text-card-foreground mb-2">{company.name}</h3>
       <p className="text-sm text-muted-foreground">
         {company.jobs} open positions
       </p>
@@ -23,7 +23,7 @@ const TopCompanies = () => {
   const companies = topCompanies[0] || topCompanies;
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">

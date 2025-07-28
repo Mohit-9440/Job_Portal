@@ -2,13 +2,16 @@ import { useState } from "react";
 import { Menu, X, Briefcase, Sun, Moon } from "lucide-react";
 import { useDarkMode } from "../hooks/useDarkMode";
 import logo from "../assets/logo.png";
+
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { isDarkMode, toggleDarkMode } = useDarkMode();
 
   return (
     <header
-      className={`shadow-sm border-b border-border sticky top-0 z-50 ${isDarkMode ? "bg-card" : "bg-white"}`}
+      className={`shadow-sm border-b border-border sticky top-0 z-50 transition-colors duration-200 ${
+        isDarkMode ? "bg-card" : "bg-white"
+      }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
@@ -25,13 +28,13 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a
               href="#"
-              className="text-muted-foreground hover:text-primary font-medium transition-colors"
+              className="text-muted-foreground hover:text-purple-600 font-medium transition-colors duration-200"
             >
               Find Jobs
             </a>
             <a
               href="#"
-              className="text-muted-foreground hover:text-primary font-medium transition-colors"
+              className="text-muted-foreground hover:text-purple-600 font-medium transition-colors duration-200"
             >
               For Companies
             </a>
@@ -41,7 +44,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={toggleDarkMode}
-              className="p-2 text-muted-foreground hover:text-primary transition-colors"
+              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-200"
               title={
                 isDarkMode ? "Switch to light mode" : "Switch to dark mode"
               }
@@ -54,7 +57,7 @@ const Header = () => {
             </button>
             <button className="btn-outline">Log in</button>
             <button className="btn-secondary">Sign up</button>
-            <button className="btn-primary bg-purple-600 hover:bg-purple-700">
+            <button className="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200">
               Post a Job
             </button>
           </div>
@@ -63,7 +66,7 @@ const Header = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-muted-foreground hover:text-primary p-2"
+              className="text-muted-foreground hover:text-primary p-2 transition-colors duration-200"
             >
               {isMobileMenuOpen ? (
                 <X className="h-6 w-6" />
@@ -80,27 +83,29 @@ const Header = () => {
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-card border-t border-border">
               <a
                 href="#"
-                className="block px-3 py-2 text-muted-foreground hover:text-primary font-medium"
+                className="block px-3 py-2 text-muted-foreground hover:text-primary font-medium transition-colors duration-200"
               >
                 Find Jobs
               </a>
               <a
                 href="#"
-                className="block px-3 py-2 text-muted-foreground hover:text-primary font-medium"
+                className="block px-3 py-2 text-muted-foreground hover:text-primary font-medium transition-colors duration-200"
               >
                 For Companies
               </a>
               <div className="pt-4 space-y-2">
                 <button
                   onClick={toggleDarkMode}
-                  className="w-full flex items-center justify-center space-x-2 py-2 px-4 text-muted-foreground hover:text-primary transition-colors"
+                  className="w-full flex items-center justify-center space-x-2 py-2 px-4 text-muted-foreground hover:text-primary transition-colors duration-200"
                 >
                   {isDarkMode ? (
                     <Sun className="h-4 w-4" />
                   ) : (
                     <Moon className="h-4 w-4" />
                   )}
-                  <span>{isDarkMode ? "Light Mode" : "Dark Mode"}</span>
+                  <span>
+                    {isDarkMode ? "Light Mode" : "Dark Mode"}
+                  </span>
                 </button>
                 <button className="w-full btn-outline">Log in</button>
                 <button className="w-full btn-secondary">Sign up</button>

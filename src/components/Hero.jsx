@@ -24,19 +24,21 @@ const Hero = () => {
   };
 
   return (
-    <section className="py-16 lg:py-24 relative overflow-hidden">
+    <section className="py-16 lg:py-24 relative overflow-hidden bg-background">
       <BackgroundLines />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
-          <span className="text-[#ff4f01] text-sm bg-[#ececec] px-2 py-2 rounded-full">
+          <span className="text-orange-600 text-sm bg-orange-100 dark:bg-orange-900/20 dark:text-orange-400 px-3 py-2 rounded-full">
             No.1 Job Hunt Website
           </span>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 mt-4">
             Search, Apply &
             <div className="mt-4">
               <span className="text-foreground">Get Your</span>
-              <span className="text-purple-600 ml-4">Dream Job</span>
+              <span className="text-purple-600 dark:text-purple-400 ml-4">
+                Dream Job
+              </span>
             </div>
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -49,7 +51,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           <form
             onSubmit={handleSearch}
-            className="bg-card rounded-2xl shadow-lg p-6 md:p-8"
+            className="bg-card rounded-2xl shadow-lg p-6 md:p-8 border border-border"
           >
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {/* Job Title/Keyword */}
@@ -104,7 +106,7 @@ const Hero = () => {
               <div className="md:col-span-1">
                 <button
                   type="submit"
-                  className="w-full btn-primary bg-purple-600 hover:bg-purple-700 h-full text-lg font-semibold"
+                  className="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg text-lg font-semibold transition-colors duration-200"
                 >
                   Search
                 </button>
@@ -121,7 +123,7 @@ const Hero = () => {
               <button
                 key={index}
                 onClick={() => handleInputChange("keyword", keyword)}
-                className="px-4 py-2 bg-card rounded-full text-sm font-medium text-muted-foreground hover:text-primary hover:bg-primary/10 border border-border hover:border-primary transition-all duration-200"
+                className="px-4 py-2 bg-muted hover:bg-purple-400 hover:text-primary-foreground text-muted-foreground rounded-full text-sm transition-colors duration-200"
               >
                 {keyword}
               </button>

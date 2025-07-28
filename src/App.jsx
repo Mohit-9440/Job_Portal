@@ -10,7 +10,7 @@ import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
-    <div className="min-h-screen bg-background transition-colors duration-200">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-200">
       <Header />
       <main>
         <Hero />
