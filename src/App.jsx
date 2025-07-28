@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import CareerOptions from "./components/CareerOptions";
 import WhatWeOffer from "./components/WhatWeOffer";
 import Testimonials from "./components/Testimonials";
+import ScrollToBottom from "./components/ScrollToBottom";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Testimonials />
       </main>
       <Footer />
+      <ScrollToBottom />
     </div>
   );
 }
