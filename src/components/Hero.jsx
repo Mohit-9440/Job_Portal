@@ -50,7 +50,7 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto px-4">
           <form
             onSubmit={handleSearch}
-            className="bg-card rounded-2xl shadow-lg p-6 md:p-8 border border-border"
+            className="bg-card rounded-2xl shadow-lg p-6 md:p-6 border border-border"
           >
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
               {/* Job Title/Keyword */}
