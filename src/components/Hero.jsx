@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import { Search, MapPin, Building } from "lucide-react";
 import { suggestedKeywords } from "../data/mockData";
 import BackgroundLines from "./BackgroundLines";
@@ -24,7 +25,7 @@ const Hero = () => {
   return (
     <section className="py-16 lg:py-24 relative overflow-hidden bg-background">
       <BackgroundLines />
-
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="text-center mb-12">
           <span className="text-orange-600 text-sm bg-orange-100 dark:bg-orange-900/20 dark:text-orange-400 px-3 py-2 rounded-full">
@@ -102,12 +103,15 @@ const Hero = () => {
 
               {/* Search Button */}
               <div className="md:col-span-1">
-                <button
+                <motion.button
                   type="submit"
                   className="w-full bg-purple-600 hover:bg-purple-700 text-white px-4 py-3 rounded-lg text-lg font-semibold transition-colors duration-200"
+                  whileHover={{ scale: 1.05, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
                 >
                   Search
-                </button>
+                </motion.button>
               </div>
             </div>
           </form>
@@ -118,13 +122,18 @@ const Hero = () => {
           <p className="text-muted-foreground mb-4">Popular searches:</p>
           <div className="flex flex-wrap justify-center gap-2">
             {suggestedKeywords.map((keyword, index) => (
-              <button
+              <motion.button
                 key={index}
                 onClick={() => handleInputChange("keyword", keyword)}
                 className="px-4 py-2 bg-muted hover:bg-purple-400 hover:text-primary-foreground text-muted-foreground rounded-full text-sm transition-colors duration-200"
+                whileHover={{ scale: 1.05, y: -1 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.2, delay: index * 0.1 }}
               >
                 {keyword}
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>

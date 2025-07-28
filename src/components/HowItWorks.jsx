@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { User, Search, FileText, Briefcase, Send } from "lucide-react";
 
 const StepCard = ({ step, index }) => {
@@ -25,7 +26,14 @@ const StepCard = ({ step, index }) => {
   ];
 
   return (
-    <div className={`text-center group bg-card border border-border rounded-lg p-4 hover:shadow-md transition-all duration-200 ${cardHeights[index]} relative z-20`}>
+    <motion.div 
+      className={`text-center group bg-card border border-border rounded-lg p-4 hover:shadow-md transition-all duration-200 ${cardHeights[index]} relative z-20`}
+      whileHover={{ scale: 1.02, y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3, delay: index * 0.2 }}
+    >
       <div className="relative mb-4">
         {/* Icon Container */}
         <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center mx-auto group-hover:bg-muted/80 transition-colors duration-200">
@@ -39,7 +47,7 @@ const StepCard = ({ step, index }) => {
       <p className="text-muted-foreground leading-relaxed text-sm">
         {step.description}
       </p>
-    </div>
+    </motion.div>
   );
 };
 
@@ -108,9 +116,16 @@ const HowItWorks = () => {
         
         {/* Paper Airplane Icon - positioned with gap from right */}
         <div className="hidden lg:block absolute top-0 right-8 transform -translate-y-1/2 z-30">
-          <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+          <motion.div 
+            className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center"
+            whileHover={{ scale: 1.1, rotate: 15 }}
+            whileTap={{ scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.2, delay: 0.8 }}
+          >
             <Send className="h-4 w-4 text-white" />
-          </div>
+          </motion.div>
         </div>
 
         {/* Cards positioned in staggered heights */}
@@ -125,9 +140,14 @@ const HowItWorks = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mt-12">
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg text-sm font-semibold transition-colors duration-200">
+          <motion.button 
+            className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg text-sm font-semibold transition-colors duration-200"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          >
             Get Started Now
-          </button>
+          </motion.button>
         </div>
       </div>
     </section>

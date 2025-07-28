@@ -1,14 +1,22 @@
+import { motion } from "framer-motion";
 import { topCompanies } from "../data/mockData";
 import { useDarkMode } from "../hooks/useDarkMode";
 
-const CompanyCard = ({ company }) => {
+const CompanyCard = ({ company, index }) => {
   const { isDarkMode } = useDarkMode();
   
   // Use dark logo if available and in dark mode
   const logoSrc = isDarkMode && company.logoDark ? company.logoDark : company.logo;
   
   return (
-    <div className="card p-6 text-center hover:shadow-lg transition-all duration-300 group">
+    <motion.div 
+      className="card p-6 text-center hover:shadow-lg transition-all duration-300 group"
+      whileHover={{ scale: 1.05, y: -5 }}
+      whileTap={{ scale: 0.98 }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2, delay: index * 0.1 }}
+    >
       <div className="mb-4">
         <img
           src={logoSrc}
@@ -20,7 +28,7 @@ const CompanyCard = ({ company }) => {
       <p className="text-sm text-muted-foreground">
         {company.jobs} open positions
       </p>
-    </div>
+    </motion.div>
   );
 };
 
@@ -43,26 +51,31 @@ const TopCompanies = () => {
 
         {/* Desktop Grid */}
         <div className="hidden lg:grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
-          {companies.map((company) => (
-            <CompanyCard key={company.id} company={company} />
+          {companies.map((company, index) => (
+            <CompanyCard key={company.id} company={company} index={index} />
           ))}
         </div>
 
         {/* Mobile/Tablet Carousel */}
         <div className="lg:hidden">
           <div className="flex space-x-4 overflow-x-auto pb-4 scrollbar-hide">
-            {companies.map((company) => (
+            {companies.map((company, index) => (
               <div key={company.id} className="flex-shrink-0 w-48">
-                <CompanyCard company={company} />
+                <CompanyCard company={company} index={index} />
               </div>
             ))}
           </div>
         </div>
 
         <div className="text-center mt-12">
-          <button className="btn-outline px-8 py-3 text-lg">
+          <motion.button 
+            className="btn-outline px-8 py-3 text-lg"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+          >
             View All Companies
-          </button>
+          </motion.button>
         </div>
       </div>
     </section>
