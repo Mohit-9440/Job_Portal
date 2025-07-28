@@ -10,9 +10,9 @@ import Testimonials from "./components/Testimonials";
 
 function App() {
   return (
-    <div className="min-h-screen bg-background text-foreground transition-colors duration-200 overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground transition-colors duration-200">
       <Header />
-      <main className="overflow-x-hidden">
+      <main>
         <Hero />
         <HowItWorks />
         <CareerOptions />
