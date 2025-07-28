@@ -1,4 +1,3 @@
-import { MapPin, Clock, DollarSign, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useRef } from "react";
 
 const JobCard = ({ job, isFeatured = false }) => {
@@ -235,8 +234,8 @@ const FeaturedJobs = () => {
   return (
     <section className="py-16 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-start justify-between mb-12">
-          <div className="flex-1">
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-12">
+          <div className="flex-1 mb-4 md:mb-0">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
               Latest and Top Job Openings
             </h2>
@@ -244,7 +243,7 @@ const FeaturedJobs = () => {
               Discover the fresh job openings from the giant firms in which you might want to apply and take a chance to get hired by top fortune companies.
             </p>
           </div>
-          <div className="ml-8">
+          <div className="md:ml-8">
             <a href="#" className="text-purple-600 hover:text-purple-700 font-medium transition-colors duration-200">
               View All Jobs
             </a>

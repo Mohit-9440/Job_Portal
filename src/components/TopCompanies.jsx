@@ -1,11 +1,17 @@
 import { topCompanies } from "../data/mockData";
+import { useDarkMode } from "../hooks/useDarkMode";
 
 const CompanyCard = ({ company }) => {
+  const { isDarkMode } = useDarkMode();
+  
+  // Use dark logo if available and in dark mode
+  const logoSrc = isDarkMode && company.logoDark ? company.logoDark : company.logo;
+  
   return (
     <div className="card p-6 text-center hover:shadow-lg transition-all duration-300 group">
       <div className="mb-4">
         <img
-          src={company.logo}
+          src={logoSrc}
           alt={`${company.name} logo`}
           className="h-12 mx-auto object-contain transition-all duration-300"
         />

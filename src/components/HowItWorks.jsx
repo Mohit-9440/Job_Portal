@@ -10,10 +10,10 @@ const StepCard = ({ step, index }) => {
 
   const IconComponent = icons[step.icon];
   const iconColors = [
-    "text-orange-500", // Create Account - orange
-    "text-purple-500", // Search Job - purple
-    "text-teal-500",   // Upload CV - teal
-    "text-yellow-500", // Get Job - yellow
+    "text-orange-500", 
+    "text-purple-500", 
+    "text-teal-500",  
+    "text-yellow-500", 
   ];
 
   // Different heights for cards to create staggered effect
@@ -125,7 +125,7 @@ const HowItWorks = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mt-12">
-          <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors duration-200">
+          <button className="bg-purple-600 hover:bg-purple-700 text-white px-8 py-3 rounded-lg text-sm font-semibold transition-colors duration-200">
             Get Started Now
           </button>
         </div>

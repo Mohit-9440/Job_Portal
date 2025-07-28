@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Briefcase, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon } from "lucide-react";
 import { useDarkMode } from "../hooks/useDarkMode";
 import logo from "../assets/logo.png";
 
@@ -62,8 +62,21 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile Header Actions */}
+          <div className="md:hidden flex items-center space-x-2">
+            <button
+              onClick={toggleDarkMode}
+              className="p-2 text-muted-foreground hover:text-primary transition-colors duration-200"
+              title={
+                isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+              }
+            >
+              {isDarkMode ? (
+                <Sun className="h-5 w-5" />
+              ) : (
+                <Moon className="h-5 w-5" />
+              )}
+            </button>
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-muted-foreground hover:text-primary p-2 transition-colors duration-200"
@@ -94,22 +107,9 @@ const Header = () => {
                 For Companies
               </a>
               <div className="pt-4 space-y-2">
-                <button
-                  onClick={toggleDarkMode}
-                  className="w-full flex items-center justify-center space-x-2 py-2 px-4 text-muted-foreground hover:text-primary transition-colors duration-200"
-                >
-                  {isDarkMode ? (
-                    <Sun className="h-4 w-4" />
-                  ) : (
-                    <Moon className="h-4 w-4" />
-                  )}
-                  <span>
-                    {isDarkMode ? "Light Mode" : "Dark Mode"}
-                  </span>
-                </button>
                 <button className="w-full btn-outline">Log in</button>
                 <button className="w-full btn-secondary">Sign up</button>
-                <button className="w-full btn-primary">Post a Job</button>
+                <button className="w-full btn-primary bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-semibold transition-colors duration-200">Post a Job</button>
               </div>
             </div>
           </div>

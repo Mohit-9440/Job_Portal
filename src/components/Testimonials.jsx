@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
 
 const Testimonials = () => {
-  const [activeIndex, setActiveIndex] = useState(2); // Start with third profile selected
+  const [activeIndex, setActiveIndex] = useState(2);
 
   const testimonials = [
     {
@@ -66,20 +66,20 @@ const Testimonials = () => {
         </div>
 
         {/* Profile Carousel */}
-        <div className="flex items-center justify-center mb-8">
+        <div className="flex items-center justify-center mb-8 px-4">
           <button 
             onClick={prevTestimonial}
-            className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors duration-200 mr-4"
+            className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors duration-200 mr-2 md:mr-4"
           >
-            <ChevronLeft className="w-6 h-6 text-muted-foreground" />
+            <ChevronLeft className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground" />
           </button>
 
-          <div className="flex space-x-4">
+          <div className="flex space-x-2 md:space-x-4">
             {testimonials.map((testimonial, index) => (
               <button
                 key={testimonial.id}
                 onClick={() => setActiveIndex(index)}
-                className={`w-16 h-16 rounded-full overflow-hidden transition-all duration-300 ${
+                className={`w-12 h-12 md:w-16 md:h-16 rounded-full overflow-hidden transition-all duration-300 ${
                   index === activeIndex 
                     ? 'ring-4 ring-primary ring-offset-2' 
                     : 'ring-2 ring-border hover:ring-muted-foreground'
@@ -96,16 +96,15 @@ const Testimonials = () => {
 
           <button 
             onClick={nextTestimonial}
-            className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors duration-200 ml-4"
+            className="p-2 rounded-full bg-muted hover:bg-muted/80 transition-colors duration-200 ml-2 md:ml-4"
           >
-            <ChevronRight className="w-6 h-6 text-muted-foreground" />
+            <ChevronRight className="w-5 h-5 md:w-6 md:h-6 text-muted-foreground" />
           </button>
         </div>
 
         {/* Testimonial Card */}
         <div className="max-w-4xl mx-auto">
           <div className="bg-purple-600 rounded-lg p-8 relative">
-            {/* Speech bubble pointer */}
             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-full">
               <div className="w-0 h-0 border-l-8 border-r-8 border-b-8 border-transparent border-b-purple-600"></div>
             </div>

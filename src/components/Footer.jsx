@@ -29,9 +29,9 @@ const Footer = () => {
   return (
     <footer className="bg-card border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <div className="mb-6">
               <span className="mb-2">
                 <img src={logo} alt="JobHunt" style={{marginTop: '-40px'}} className="h-32 w-32" />
@@ -54,16 +54,16 @@ const Footer = () => {
           <FooterLinkSection title="Follow Us" links={footerLinks.followUs} />
 
           {/* Contact Info */}
-          <div>
+          <div className="sm:col-span-2 lg:col-span-1">
             <h4 className="text-lg font-semibold mb-4 text-foreground">Contact Info</h4>
             <div className="space-y-3">
               <div className="flex items-center text-muted-foreground">
-                <Phone className="h-4 w-4 mr-3" />
-                <span>+1 (555) 123-4567</span>
+                <Phone className="h-4 w-4 mr-3 flex-shrink-0" />
+                <span className="text-sm sm:text-base">+1 (555) 123-4567</span>
               </div>
-              <div className="flex items-center text-muted-foreground">
-                <MapPin className="h-8 w-8 mr-3" />
-                <span>123 Job Street, Tech City, TC 12345</span>
+              <div className="flex items-start text-muted-foreground">
+                <MapPin className="h-4 w-4 mr-3 mt-1 flex-shrink-0" />
+                <span className="text-sm sm:text-base">123 Job Street, Tech City, TC 12345</span>
               </div>
             </div>
           </div>

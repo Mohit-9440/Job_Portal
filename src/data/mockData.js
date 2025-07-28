@@ -93,14 +93,16 @@ export const topCompanies = [
     },
     {
       id: 3,
-      name: "Apple",
-      logo: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg",
+      name: "NVIDIA",
+      logo: "https://www.logo.wine/a/logo/Nvidia/Nvidia-Horizontal-Logo.wine.svg",
+      logoDark: "https://www.logo.wine/a/logo/Nvidia/Nvidia-Light-Horizontal-Dark-Background-Logo.wine.svg",
       jobs: 28,
     },
     {
       id: 4,
       name: "Amazon",
       logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+      logoDark: "https://www.pngmart.com/files/23/Amazon-Logo-White-PNG-Image.png",
       jobs: 56,
     },
     {
@@ -126,6 +128,13 @@ export const suggestedKeywords = [
   "Engineer",
   "Analyst",
   "Consultant",
+  "Product Manager",
+  "Data Scientist",
+  "AI Engineer",
+  "Cybersecurity Analyst",
+  "Cloud Architect",
+  "DevOps Engineer",
+  "Mobile Developer",
 ];
 
 export const howItWorksSteps = [

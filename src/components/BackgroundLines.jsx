@@ -6,12 +6,12 @@ const BackgroundLines = () => {
       {/* Two parallel semi-circle lines with company logos */}
       <svg
         className="absolute inset-0 w-full h-full"
-        viewBox="0 0 1200 800"
-        preserveAspectRatio="none"
+        viewBox="0 0 100% 100%"
+        preserveAspectRatio="xMidYMid slice"
       >
         {/* First semi-circle line (top) - reduced curve depth */}
         <path
-          d="M 0,10 Q 500,600 1250,0"
+          d="M 0,10 Q 50%,600 100%,0"
           stroke="#e5e7eb"
           strokeWidth="1.5"
           fill="none"
@@ -21,7 +21,7 @@ const BackgroundLines = () => {
 
         {/* Second semi-circle line (bottom) - increased distance */}
         <path
-          d="M 0,300 Q 600,800 1250,300"
+          d="M 0,300 Q 50%,800 100%,300"
           stroke="#e5e7eb"
           strokeWidth="1.5"
           fill="none"
@@ -32,10 +32,10 @@ const BackgroundLines = () => {
 
       {/* Company logos positioned along the lines */}
       {/* Top line logos - line passes BELOW the center */}
-      <div className="absolute top-12 left-12">
-        <div className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-100">
+      <div className="absolute top-12 left-4 md:left-12">
+        <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-100">
           <svg
-            className="w-5 h-5 text-blue-400"
+            className="w-4 h-4 md:w-5 md:h-5 text-blue-400"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -44,10 +44,10 @@ const BackgroundLines = () => {
         </div>
       </div>
 
-      <div className="absolute top-44 left-72">
-        <div className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-100">
+      <div className="absolute top-44 left-1/2 transform -translate-x-1/2 md:left-72 md:transform-none">
+        <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-100">
           <svg
-            className="w-5 h-5 text-orange-500"
+            className="w-4 h-4 md:w-5 md:h-5 text-orange-500"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -56,9 +56,9 @@ const BackgroundLines = () => {
         </div>
       </div>
 
-      <div className="absolute top-20 right-24">
-        <div className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-100">
-          <svg className="w-5 h-5" viewBox="0 0 24 24">
+      <div className="absolute top-20 right-4 md:right-24">
+        <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-100">
+          <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24">
             <path
               fill="#4285F4"
               d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
@@ -80,10 +80,10 @@ const BackgroundLines = () => {
       </div>
 
       {/* Bottom line logos - line passes ABOVE the center */}
-      <div className="absolute top-72 left-20">
-        <div className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-100">
+      <div className="absolute top-72 left-4 md:left-20">
+        <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-100">
           <svg
-            className="w-5 h-5 text-blue-600"
+            className="w-4 h-4 md:w-5 md:h-5 text-blue-600"
             fill="currentColor"
             viewBox="0 0 24 24"
           >
@@ -92,9 +92,9 @@ const BackgroundLines = () => {
         </div>
       </div>
 
-      <div className="absolute top-80 right-20">
-        <div className="w-10 h-10 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-100">
-          <svg className="w-5 h-5" viewBox="0 0 24 24">
+      <div className="absolute top-80 right-4 md:right-20">
+        <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-full shadow-sm flex items-center justify-center border border-gray-100">
+          <svg className="w-4 h-4 md:w-5 md:h-5" viewBox="0 0 24 24">
             <path fill="#f25022" d="M0 0h11v11H0z" />
             <path fill="#7fba00" d="M12 0h11v11H12z" />
             <path fill="#00a4ef" d="M0 12h11v11H0z" />

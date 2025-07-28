@@ -12,8 +12,6 @@ const Hero = () => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log("Search submitted:", searchData);
-    // Handle search logic here
   };
 
   const handleInputChange = (field, value) => {
@@ -27,7 +25,7 @@ const Hero = () => {
     <section className="py-16 lg:py-24 relative overflow-hidden bg-background">
       <BackgroundLines />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="text-center mb-12">
           <span className="text-orange-600 text-sm bg-orange-100 dark:bg-orange-900/20 dark:text-orange-400 px-3 py-2 rounded-full">
             No.1 Job Hunt Website
@@ -41,14 +39,14 @@ const Hero = () => {
               </span>
             </div>
           </h1>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto px-4">
             Start your hunt for the best life-changing career opportunities from
             here in your selected areas conveniently and get hired quickly.
           </p>
         </div>
 
         {/* Search Form */}
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto px-4">
           <form
             onSubmit={handleSearch}
             className="bg-card rounded-2xl shadow-lg p-6 md:p-8 border border-border"
@@ -116,7 +114,7 @@ const Hero = () => {
         </div>
 
         {/* Suggested Keywords */}
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center px-4">
           <p className="text-muted-foreground mb-4">Popular searches:</p>
           <div className="flex flex-wrap justify-center gap-2">
             {suggestedKeywords.map((keyword, index) => (
